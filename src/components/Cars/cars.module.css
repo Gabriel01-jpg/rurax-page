@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    height: calc(100vh - 84px);
+    align-items: center;
+}
+
+.sloganContainer {
+    margin-top: -150px;
+
+    z-index: 2;
+
+    animation-name: fly;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+
+.slogan {
+    font-size: 5rem;
+    max-width: 32px;
+    font-weight: 700;
+    color: #FFF;
+
+    line-height: 48px;
+}
+
+.sloganSpan {
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--main-text-color);
+
+    line-height: 42px;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.carContainer,
+.infos {
+    transition: transform 1s;
+}
+
+.carName {
+    color: var(--main-text-color);
+    font-weight: 900;
+    font-size: 4rem;
+}
+
+.carInfos {
+    color: var(--main-text-color);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.infosButton {
+    font-size: 1.5rem;
+    width: fit-content;
+    padding: 12px 25px;
+
+    cursor: pointer;
+
+    background-color: var(--main-text-color);
+    color: var(--second-bg-color);
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+        gap: 84px;
+        justify-content: center;
+    }
+
+    .carName {
+        font-size: 2rem;
+    }
+
+    .carInfos {
+        font-size: 1.2rem;
+    }
+
+    .carImage {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .sloganContainer {
+        margin-top: -40px;
+        margin-left: 12px;
+    }
+
+    .slogan {
+        font-size: 2rem;
+        max-width: 32px;
+        line-height: 20px;
+    }
+
+    .sloganSpan {
+        font-size: 2rem;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 601) and (max-width: 1440px) {
+    .carImage {
+        width: 600px;
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    gap: 36px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 12px;
+
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+}
+
+.container svg {
+    font-size: 2rem;
+}
+
+.logo {
+    width: 300px;
+}
+
+.navigation {
+    list-style: none;
+    text-decoration: none;
+
+    display: flex;
+    gap: 50px;
+    height: 84px;
+    align-items: center;
+}
+
+.navigationItem {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--main-text-color);
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: all 1s;
+}
+
+.navigationItem::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    transition: width 1s;
+    background-color: var(--main-text-color);
+    height: 2px;
+}
+
+.navigationItem:hover::before {
+    width: 100%;
+}
+
+.navigationItem a {
+    color: var(--main-text-color);
+    text-decoration: none;
+
+}
