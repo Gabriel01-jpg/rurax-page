@@ -23,19 +23,19 @@ export function Cars() {
     const infosRef = useRef();
     const secondCarRef = useRef();
     const secondInfosRef = useRef();
+    const divRef = useRef();
 
     useEffect(() => {
 
-        const size = window.screen.height - 136
+        const size = divRef.current.offsetHeight;
 
         console.log(size);
-        console.log(scrollPosition)
+        console.log(scrollPosition);
 
         carRef.current.style = `transform: translateX(-${scrollPosition * 2}px)`
         infosRef.current.style.transform = `translateX(${scrollPosition * 2}px)`
         secondCarRef.current.style.transform = `translateX(-${Math.abs(scrollPosition - size)}px)`
-        secondInfosRef.current.style.transform = `translateX(${Math.abs(scrollPosition - size)
-            }px)`
+        secondInfosRef.current.style.transform = `translateX(${Math.abs(scrollPosition - size)}px)`
 
     }, [scrollPosition])
 
@@ -57,7 +57,7 @@ export function Cars() {
                 </div>
 
             </div>
-            <div className={styled.container} id="ranger-black">
+            <div ref={divRef} className={styled.container} id="ranger-black">
                 <div ref={secondCarRef} className={styled.carContainer}>
                     <img className={styled.carImage} src={rangerStorm} alt="Uma imagem com a ranger storm" />
                     <div className={styled.sloganContainer}>
