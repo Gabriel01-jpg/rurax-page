@@ -1,5 +1,6 @@
 import * as styled from './cars.module.css'
 import rangerStorm from '../../assets/rangerStorm.png'
+import rangerBlack from '../../assets/rangerBlack.png'
 import { useEffect, useRef, useState } from 'react';
 
 export function Cars() {
@@ -55,16 +56,15 @@ export function Cars() {
             </div>
             <div ref={divRef} className={styled.container} id="ranger-black">
                 <div ref={secondCarRef} className={styled.carContainer}>
-                    <img className={styled.carImage} src={rangerStorm} alt="Uma imagem com a ranger storm" />
+                    <img className={styled.carImage} src={rangerBlack} alt="Uma imagem com a ranger storm" />
                     <div className={styled.sloganContainer}>
                         <p className={styled.slogan}>ESSE PREÇO</p>
                         <span className={styled.sloganSpan}>SÓ AQUI!</span>
                     </div>
                 </div>
                 <div ref={secondInfosRef} className={styled.infos}>
-                    <h1 className={styled.carName}>RANGER STORM</h1>
+                    <h1 className={styled.carName}>RANGER BLACK</h1>
                     <p className={styled.carInfos}>2023 (JUN3)</p>
-                    <p className={styled.carInfos}>motor 3.2 200 cv</p>
                     <button className={styled.infosButton} type="button">Saiba mais</button>
                 </div>
 

@@ -200,6 +200,12 @@
     }
 }
 
+@media (min-width: 1441px) {
+    .carImage {
+        min-width: 720px;
+    }
+}
+
 @keyframes fly {
     0% {
         transform: translateY(0);
