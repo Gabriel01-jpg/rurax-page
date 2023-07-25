@@ -105,16 +105,18 @@ export function Cars() {
     }, [scrollPosition])
 
     function handleOpenModal() {
+        document.querySelector('html').style.overflow = "hidden"
         setIsOpen(true);
     }
 
     function handleCloseModal() {
+        document.querySelector('html').style.overflow = ""
         setIsOpen(false);
     }
 
     return (
         <>
-            <Modal isOpen={modalIsOpen} onRequestClose={handleCloseModal} overlayClassName="modal-overlay" className="modal-content">
+            <Modal isOpen={modalIsOpen} onRequestClose={handleCloseModal} overlayClassName="modal-overlay" className="modal-content" preventScroll={true} >
                 <div className={styled.close} onClick={handleCloseModal}>
                     <BsArrowRight />
                 </div>
@@ -139,7 +141,9 @@ export function Cars() {
                         {errors.phone && <p className={styled.error}>{errors.phone.message}</p>}
                     </div>
                     <div>
-                        <textarea className={styled.textarea} placeholder="Sua mensagem vem aqui." value="Gostaria de saber mais sobre essa oferta..." {...register('message')} />
+                        <textarea className={styled.textarea} placeholder="Sua mensagem vem aqui." {...register('message')} >
+                            Gostaria de saber mais sobre essa oferta...
+                        </textarea>
                         {errors.message && <p className={styled.error}>{errors.message.message}</p>}
                     </div>
                     <button type="submit" className={styled.sent} disabled={isSubmitting}>

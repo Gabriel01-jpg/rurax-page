@@ -57,6 +57,8 @@ textarea {
     border-radius: 5px;
 
     width: 50vw;
+
+    overflow-y: scroll;
 }
 
 @media (max-width: 600px) {
