@@ -6,7 +6,7 @@ export function Header() {
 
     const screenSize = window.screen.width;
 
-    const isMobile = screenSize < 600;
+    const isMobile = screenSize < 920;
 
     console.log(isMobile);
 

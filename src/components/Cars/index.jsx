@@ -26,9 +26,7 @@ export function Cars() {
     const divRef = useRef();
 
     useEffect(() => {
-
         const size = divRef.current.offsetHeight - 52;
-        console.log(size);
 
         carRef.current.style = `transform: translateX(-${scrollPosition * 2}px)`
         infosRef.current.style.transform = `translateX(${scrollPosition * 2}px)`
