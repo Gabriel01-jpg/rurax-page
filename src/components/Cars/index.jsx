@@ -42,13 +42,11 @@ export function Cars() {
     const onSubmit = handleSubmit(async (data) => {
         const { name, email, phone, message } = data;
         try {
-            const response = await api.post('/contacts/vehicles', {
+            const response = await api.post('/contacts/ford/', {
                 name,
                 email,
                 phone,
                 message,
-                stateId: '9',
-                cityId: '977'
             })
             response && toast.success('Seu contato foi enviado com sucesso.', {
                 position: "top-right",
