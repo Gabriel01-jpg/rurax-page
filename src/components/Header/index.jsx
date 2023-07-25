@@ -1,4 +1,5 @@
-import logo from '../../assets/logo.svg'
+import logoWhite from '../../assets/logo.svg'
+import logoGreen from '../../assets/logoGreen.png'
 import * as styled from './header.module.css'
 import { PiListFill } from 'react-icons/pi'
 
@@ -8,16 +9,18 @@ export function Header() {
 
     const isMobile = screenSize < 920;
 
-    console.log(isMobile);
-
     return (
         <div className={styled.container}>
             {isMobile && (
-                <PiListFill />
+                <div className={styled.navigationMobile}>
+                    <PiListFill />
+                    <img src={logoGreen} className={styled.logo} />
+
+                </div>
             )}
             {!isMobile && (
                 <>
-                    <img src={logo} className={styled.logo} />
+                    <img src={logoWhite} className={styled.logo} />
                     <ul className={styled.navigation}>
                         <li className={styled.navigationItem}><a href="#ranger-storm">RANGER STORM</a></li>
                         <li className={styled.navigationItem}><a href="#ranger-black">RANGER BLACK</a></li>

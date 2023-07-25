@@ -26,6 +26,41 @@ body {
 }
 
 body,
-button {
+button,
+input,
+textarea {
     font-family: 'Poppins', sans-serif;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+
+    position: relative;
+
+    background-color: var(--main-bg-color);
+
+    width: fit-content;
+    max-width: 80vw;
+    padding: 25px;
+    border-radius: 5px;
+
+    width: 50vw;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90vw;
+    }
 }

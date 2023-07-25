@@ -76,6 +76,113 @@
     border-radius: 5px;
 }
 
+.titleContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 24px
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+
+    color: #494649;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin-top: 32px;
+
+    align-items: center;
+}
+
+.form div {
+    width: 100%;
+}
+
+.error {
+    font-size: 0.9rem;
+
+    margin-top: 4px;
+    color: red;
+}
+
+.input {
+    width: 100%;
+    background-color: transparent;
+    color: #58595B;
+    border-bottom: 1px solid #C2C2C2;
+}
+
+.textarea {
+    border-radius: 2px;
+    border: 1px solid #C2C2C2;
+    width: 100%;
+    color: #58595B;
+    padding: 12px;
+}
+
+.label {
+    font-weight: 600;
+    display: inline-block;
+    color: #494649;
+    margin-bottom: 8px;
+}
+
+textarea:focus {
+    outline-color: #494649;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+input:focus.label {
+    transform: translateX(20px);
+}
+
+.joinImage {
+    width: 250px;
+}
+
+.sent {
+    background-color: var(--main-text-color);
+    color: var(--second-bg-color);
+    font-weight: bold;
+    border-radius: 6px;
+    width: fit-content;
+    padding: 10px 14px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.sent:hover {
+    filter: brightness(0.9);
+}
+
 @media (max-width: 600px) {
     body {
         overflow-x: hidden;
@@ -197,12 +304,6 @@
     .sloganSpan {
         font-size: 2rem;
         line-height: 20px;
-    }
-}
-
-@media (min-width: 1441px) {
-    .carImage {
-        min-width: 720px;
     }
 }
 
