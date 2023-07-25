@@ -99,8 +99,15 @@ export function Cars() {
 
         carRef.current.style = `transform: translateX(-${scrollPosition * 2}px)`
         infosRef.current.style.transform = `translateX(${scrollPosition * 2}px)`
-        secondCarRef.current.style.transform = `translateX(-${Math.abs(scrollPosition - size)}px)`
-        secondInfosRef.current.style.transform = `translateX(${Math.abs(scrollPosition - size)}px)`
+
+        if (scrollPosition > 700) {
+            secondCarRef.current.style.transform = `translateX(0px)`
+            secondInfosRef.current.style.transform = `translateX(0px)`
+        } else {
+            secondCarRef.current.style.transform = `translateX(-${Math.abs(scrollPosition - size)}px)`
+            secondInfosRef.current.style.transform = `translateX(${Math.abs(scrollPosition - size)}px)`
+        }
+
 
     }, [scrollPosition])
 
