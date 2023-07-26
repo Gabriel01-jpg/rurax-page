@@ -69,11 +69,19 @@
 
     cursor: pointer;
 
+    transition: all 1s;
+
     background-color: var(--main-text-color);
+    box-shadow: inset 27px -27px 48px #113212,
+        inset -27px 27px 48px #19481a;
     color: var(--second-bg-color);
     font-weight: 700;
     border: none;
     border-radius: 5px;
+}
+
+.infosButton:hover {
+    color: white;
 }
 
 .titleContainer {

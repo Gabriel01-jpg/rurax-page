@@ -1,0 +1,83 @@
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+
+    opacity: 1;
+    max-width: 120px;
+    transition: all 3s;
+
+    background-color: var(--main-text-color);
+    color: #FFF;
+
+    padding: 15px 10px 15px 10px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+
+}
+
+.animationOpen {
+    opacity: 1;
+    max-width: 400px;
+}
+
+.animationClose {
+    opacity: 1;
+    max-width: 100px;
+}
+
+.animationClose p {
+    display: none;
+}
+
+.animationClose div {
+    flex-direction: column;
+}
+
+
+@keyframes slidein {
+    from {
+        opacity: 1;
+        max-width: 400px;
+    }
+
+    to {
+        opacity: 0;
+        max-width: 0;
+    }
+}
+
+
+
+.footer p {
+    font-size: 1.2rem;
+}
+
+
+.icons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    font-size: 1.5rem;
+
+    margin-top: 12px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.icons svg {
+    cursor: pointer;
+}
+
+.icons svg:hover {
+    color: var(--second-bg-color);
+}

@@ -3,6 +3,8 @@ import { Cars } from './components/Cars'
 import { Header } from './components/Header'
 
 import 'react-toastify/dist/ReactToastify.css';
+import { Footer } from './components/Footer';
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <ToastContainer />
       <Header />
       <Cars />
+      <Footer />
     </>
   )
 }
