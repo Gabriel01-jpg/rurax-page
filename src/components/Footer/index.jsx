@@ -23,7 +23,7 @@ export function Footer() {
     }, []);
 
     useEffect(() => {
-        if (scrollPosition > 700) {
+        if (scrollPosition > 600) {
             setIsOpen(true)
         } else {
             setIsOpen(false)

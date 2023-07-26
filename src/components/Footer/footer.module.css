@@ -1,7 +1,9 @@
 .footer {
     position: fixed;
     right: 0;
-    bottom: 10px;
+    bottom: 0px;
+
+    width: 100%;
 
     opacity: 1;
     max-width: 120px;
@@ -13,21 +15,23 @@
     padding: 15px 10px 15px 10px;
 
     border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
 
     display: flex;
 
+    align-items: center;
+    justify-content: center;
 
+    gap: 12px
 }
 
 .animationOpen {
     opacity: 1;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .animationClose {
     opacity: 1;
-    max-width: 100px;
+    max-width: 60px;
 }
 
 .animationClose p {
@@ -60,7 +64,6 @@
 
 .icons {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
 
@@ -68,7 +71,7 @@
 
     font-size: 1.5rem;
 
-    margin-top: 12px;
+    margin-top: 2px;
 }
 
 .icons a {
