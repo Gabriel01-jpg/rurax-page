@@ -23,7 +23,7 @@ export function Footer() {
     }, []);
 
     useEffect(() => {
-        if (scrollPosition > 600) {
+        if (scrollPosition > 650) {
             setIsOpen(true)
         } else {
             setIsOpen(false)
@@ -32,7 +32,7 @@ export function Footer() {
 
     return (
         <footer className={`${styled.footer} ${isOpen ? `${styled.animationOpen}` : `${styled.animationClose}`}`}>
-            <p>Explore Rurax em</p>
+            <p>Explore Rurax em: </p>
             <div className={styled.icons}>
                 <a href="https://rurax.com.br" target='__blank'>
                     <CgWebsite />
