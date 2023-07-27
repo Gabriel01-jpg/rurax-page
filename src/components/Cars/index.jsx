@@ -3,13 +3,14 @@ import rangerStorm from '../../assets/rangerStorm.png'
 import rangerBlack from '../../assets/rangerBlack.png'
 import joinImage from '../../assets/join.svg'
 import { useEffect, useRef, useState } from 'react';
+import InputMask from 'react-input-mask';
 import { toast } from 'react-toastify';
 import { TbSend } from 'react-icons/tb'
 import { BsArrowRight } from 'react-icons/bs'
 import Modal from 'react-modal';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { api } from '../../api';
 
 
@@ -18,8 +19,8 @@ const schema = z.object({
     email: z.string().email({
         message: 'Informe um email válido.'
     }),
-    phone: z.string().refine((val) => /^\d{11}$/.test(val), {
-        message: 'Digite um número de telefone válido com 11 dígitos',
+    phone: z.string().refine((val) => val.replace(/\D/g, '').length > 10, {
+        message: 'Informe um valor válido de telefone.'
     }),
     message: z.string().min(1, { message: 'Informe uma mensagem.' }),
 })
@@ -35,7 +36,7 @@ export function Cars() {
         setScrollPosition(position);
     };
 
-    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm({
+    const { register, handleSubmit, formState: { errors, isSubmitting }, reset, control } = useForm({
         resolver: zodResolver(schema)
     });
 
@@ -45,7 +46,7 @@ export function Cars() {
             const response = await api.post('/contacts/ford/', {
                 name,
                 email,
-                phone,
+                phone: phone.replace(/\D/g, ''),
                 message,
             })
             response && toast.success('Seu contato foi enviado com sucesso.', {
@@ -142,7 +143,17 @@ export function Cars() {
                     </div>
                     <div>
                         <label className={styled.label}>Telefone:</label>
-                        <input type="text" className={styled.input} placeholder="Digite seu telefone:" {...register('phone')} />
+                        <Controller
+                            control={control}
+                            name="phone"
+                            render={({ field: { onChange, onBlur, value, ref } }) => (
+                                <InputMask mask="(99)99999-9999" value={value} onChange={onChange} onBlur={onBlur} ref={ref}>
+                                    {(inputProps) => (
+                                        <input {...inputProps} type="text" className={styled.input} placeholder="Digite seu telefone:" />
+                                    )}
+                                </InputMask>
+                            )}
+                        />
                         {errors.phone && <p className={styled.error}>{errors.phone.message}</p>}
                     </div>
                     <div>
